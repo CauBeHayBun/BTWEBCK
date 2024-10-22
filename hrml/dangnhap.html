@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="../fontawesome-free-6.6.0-web/css/all.css">
+    <style>
+        /* CSS cho form đăng nhập */
+        
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #5e2f28;
+            color: white;
+        }
+        
+        .header-top {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-menu {
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .header-menu ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .header-menu ul li {
+            margin: 0 15px;
+        }
+        
+        .header-menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            transition: border-bottom 0.3s ease;
+        }
+        
+        .header-menu ul li:hover a {
+            border-bottom: 2px solid yellowgreen;
+        }
+        
+        .logo img {
+            max-height: 70px;
+            border-radius: 17px;
+        }
+        
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin-left: 3px;
+            margin-right: 40%;
+        }
+        
+        .search-bar input {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .search-bar button {
+            padding: 5px 10px;
+            background-color: #8bc34a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .search-bar button:hover {
+            background-color: #6fa629;
+        }
+        
+        .header-icons {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .header-icons a {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .header-icons i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .header-icons a.icon1 i {
+            color: #8bc34a;
+            /* Icon màu xanh lá cây cho số điện thoại */
+        }
+        
+        .header-icons a.icon2 i {
+            color: #ff9800;
+            /* Icon màu cam cho hệ thống cửa hàng */
+        }
+        
+        .header-icons a.icon3 i {
+            color: #2196f3;
+            /* Icon màu xanh dương cho tài khoản */
+        }
+        
+        .header-icons a.icon4 i {
+            color: #ffffff;
+            /* Icon màu trắng cho giỏ hàng */
+            font-size: 18px;
+        }
+        /* Đặt hình ảnh nền bao phủ toàn bộ trang */
+        
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../img/dangnhap/image.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+        
+        .login-container {
+            /* position: absolute; */
+            /* top: 50%; */
+            /* left: 50%; */
+            /* transform: translate(-50%, -50%); */
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Nền mờ để form nổi bật hơn */
+            padding: 30px;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 90%;
+            text-align: center;
+            margin: 10px 10px 10px 32%;
+            /* margin-right: -18%; */
+        }
+        
+        .login-form h2 {
+            margin-bottom: 20px;
+            color: #5e2f28;
+        }
+        
+        .login-form input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .login-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #5e2f28;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        
+        .login-form button:hover {
+            background-color: #3c1d19;
+        }
+        
+        .login-form a {
+            display: block;
+            margin-top: 15px;
+            color: #5e2f28;
+            text-decoration: none;
+        }
+        
+        .login-form a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            background-image: url("../img/homm/image-brfooter.png");
+            /* Đường dẫn ảnh nền */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            background: rgba(0, 0, 0, 0.5);
+            ;
+            padding: 50px;
+        }
+        
+        .company-info,
+        .policies,
+        .company-details,
+        .newsletter {
+            flex: 1;
+            margin-right: 20px;
+        }
+        
+        .company-info img.logo {
+            width: 150px;
+            margin-bottom: 15px;
+            border-radius: 25px;
+        }
+        
+        .company-info p,
+        .company-details p,
+        .newsletter p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .policies h3,
+        .company-details h3,
+        .newsletter h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #fff;
+        }
+        
+        .policies ul {
+            list-style-type: none;
+        }
+        
+        .policies ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .policies ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        .newsletter input {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        
+        .subscribe-btn {
+            background-color: #88b35c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .social-icons {
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            margin-right: 15px;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        
+        .social-icons a:hover {
+            color: #88b35c;
+        }
+        
+        .footer-bottom {
+            background-color: #5e2f28;
+            color: white;
+            height: 60px;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="../hrml/aaa.html">
+                    <img src="../img/homm/image.png" alt="Thanh Sang Bakery">
+                </a>
+
+            </div>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                <button class="search-button">🔍</button>
+            </div>
+            <div class="header-icons">
+                <a href="tel:0961 452 578" class="icon1">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>0961 452 578</span>
+                </a>
+                <a href="#" class="icon2">
+                    <i class="fas fa-store"></i> Hệ thống 15 cửa hàng
+                </a>
+                <a href="../hrml/dangnhap.html" class="icon3">
+                    <i class="fas fa-user"></i> Tài khoản
+                </a>
+                <a href="#" class="icon4">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+
+        </div>
+        <div class="header-menu">
+            <ul>
+                <li style="border-bottom: 2px solid yellowgreen;"><a href="#">Trang chủ</a></li>
+                <li><a href="#">Bánh Sinh Nhật</a></li>
+                <li><a href="#">Bánh Mì & Bánh Mặn</a></li>
+                <li>
+                    <a href="#">Cookies & Minicake</a>
+                </li>
+                <li>
+                    <a href="#">Tin tức</a>
+                </li>
+                <li>
+                    <a href="#">Khuyến mại</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hình nền toàn màn hình -->
+    <div class="background-image"></div>
+
+    <!-- Form đăng nhập hiển thị ở giữa màn hình -->
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Đăng nhập</h2>
+            <input type="text" placeholder="Tên tài khoản" required>
+            <input type="password" placeholder="Mật khẩu" required>
+            <button type="submit">Đăng nhập</button>
+            <a href="#">Quên mật khẩu?</a>
+            <a href="../hrml/dangki.html">Tạo tài khoản mới</a>
+        </form>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="company-info">
+                <img src="../img/homm/image.png" alt="Anh Hoa Bakery Logo" class="logo">
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> Số 09 Trần Thái Tông, P. Dịch Vọng, Q. Cầu Giấy, TP. Hà Nội <br>
+                    <i class="fas fa-phone-alt"></i> 0961452578 <br>
+                    <i class="fas fa-envelope"></i> anhhoabakery1@gmail.com
+                </p>
+            </div>
+
+            <div class="policies">
+                <h3>Chính Sách</h3>
+                <ul>
+                    <li><a href="#">Chính sách và quy định chung</a></li>
+                    <li><a href="#">Chính sách giao dịch, thanh toán</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                </ul>
+            </div>
+
+            <div class="company-details">
+                <h3>Công ty Cổ phần Bánh ngọt Anh Hòa</h3>
+                <p>
+                    Tên miền chính: anhhoabakery.vn <br> Tên miền phụ: banhngotphap.vn <br> MST/ĐKKD/QLTL: 0104802706 <br> Ngày cấp: 21/07/2010 <br> Nơi cấp: Sở Kế hoạch và Đầu tư Tp. Hà Nội
+                </p>
+            </div>
+
+            <div class="newsletter">
+                <h3>Mỗi tháng chúng tôi có những đợt giảm giá</h3>
+                <p>Để nhận thông tin mới nhất, vui lòng nhập email:</p>
+                <input type="email" placeholder="Nhập email của bạn...">
+                <button class="subscribe-btn"><i class="fas fa-envelope"></i></button>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>© 2024 Thanh Sang Bakery. All Rights Reserved.</p>
+    </div>
+
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function() {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function(msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        } else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
+</body>
+
+</html>

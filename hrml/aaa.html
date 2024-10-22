@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Layout</title>
+    <link rel="stylesheet" href="../fontawesome-free-6.6.0-web/css/all.css">
+    <link rel="stylesheet" href="../css/aaa.css">
+    <style>
+        /* General Reset */
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="../img/homm/image.png" alt="Thanh Sang Bakery">
+            </div>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                <button class="search-button">🔍</button>
+            </div>
+            <div class="header-icons">
+                <a href="tel:0961 452 578" class="icon1">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>0961 452 578</span>
+                </a>
+                <a href="#" class="icon2">
+                    <i class="fas fa-store"></i> Hệ thống 15 cửa hàng
+                </a>
+                <a href="../hrml/dangnhap.html" class="icon3">
+                    <i class="fas fa-user"></i> Tài khoản
+                </a>
+                <a href="#" class="icon4">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+
+        </div>
+        <div class="header-menu">
+            <ul>
+                <li style="border-bottom: 2px solid yellowgreen;"><a href="#">Trang chủ</a></li>
+                <li><a href="#">Bánh Sinh Nhật</a></li>
+                <li><a href="#">Bánh Mì & Bánh Mặn</a></li>
+                <li>
+                    <a href="#">Cookies & Minicake</a>
+                </li>
+                <li>
+                    <a href="#">Tin tức</a>
+                </li>
+                <li>
+                    <a href="#">Khuyến mại</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <div class="banner">
+        <div class="slideshow-container">
+
+            <!-- Slide 1 -->
+            <div class="mySlides fade">
+                <img src="../img/homm/mb_banner_img1.jpg" alt="Banner Image 1">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="mySlides fade">
+                <img src="../img/homm/mb_banner_img2.png" alt="Banner Image 2">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="mySlides fade">
+                <img src="../img/homm/mb_banner_img3.png" alt="Banner Image 3">
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="../js/script-banner.js"></script>
+    <!-- Kết nối với file JS -->
+
+    <!-- Cake Section -->
+    <section class="cake-section">
+        <h2>Bánh Sinh Nhật 2024</h2>
+        <div class="cake-items">
+            <div class="cake-item">
+                <a href="#">
+                    <img src="../img/homm/anh4.png" alt="Tiramisu Cake Mousse">
+                    <h3>TIRAMISU CAKE MOUSSE</h3>
+                    <p>360,000đ</p>
+                </a>
+            </div>
+            <div class="cake-item">
+                <a href="#">
+                    <img src="../img/homm/anh5.png" alt="Tiramisu Cake Chữ Nhật">
+                    <h3>TIRAMISU CAKE CHỮ NHẬT</h3>
+                    <p>660,000đ</p>
+                </a>
+            </div>
+            <div class="cake-item">
+                <a href="#">
+                    <img src="../img/homm/anh6.png" alt="Tiramisu Cake">
+                    <h3>TIRAMISU CAKE</h3>
+                    <p>330,000đ</p>
+                </a>
+            </div>
+            <div class="cake-item">
+                <a href="#">
+                    <img src="../img/homm/anh7.png" alt="Red Velvet Cream Cheese">
+                    <h3>RED VELVET CREAM CHEESE</h3>
+                    <p>360,000đ</p>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section class="order-form">
+        <div class="section-img">
+            <img src="../img/homm/image1.png" alt="">
+        </div>
+        <div class="section-body">
+            <h2>Đặt Online Ngay!</h2>
+            <form>
+                <input type="text" placeholder="Họ tên của bạn">
+                <input type="email" placeholder="Địa chỉ email của bạn">
+                <input type="text" placeholder="Số điện thoại của bạn">
+                <textarea placeholder="Nội dung"></textarea>
+                <button type="submit">Đặt Ngay</button>
+            </form>
+        </div>
+
+    </section>
+    <div class="slider-container">
+        <h3>Tin Tức</h3>
+        <h2>Nổi bật trong tuần</h2>
+        <button class="slider-btn left-btn" id="prev-btn">&lt;</button>
+
+        <div class="slider" id="slider">
+            <div class="slide">
+                <img src="../img/homm/SLIDE1.jpg" alt="Slide 1">
+                <p>Ngày Phụ Nữ Việt Nam 20/10 là ngày đặc biệt để tôn vinh những người phụ nữ Việt Nam. Những lời chúc, những món quà ý nghĩa được gửi đến các Bà, các Mẹ, các chị/ em, bạn bè đồng ...
+
+                </p>
+
+            </div>
+            <div class="slide">
+                <img src="../img/homm/SLIDE2.jpg" alt="Slide 2">
+                <p>Ngày lễ Halloween xuất phát từ một nghi lễ cổ xưa ở phương Tây, nay đã trở thành một lễ hội được nhiều nước tưng bừng tổ chức. Halloween được tổ chức hàng năm vào ngày...</p>
+
+            </div>
+            <div class="slide">
+                <img src="../img/homm/SLIDE3.jpg" alt="Slide 3">
+                <p>DEAL HOT CẢ TUẦN - MUA 2 TẶNG 1Chương trình khuyến mãi dành riêng cho những chiếc Pizza Cấp Đông Tươi Ngon - An Toàn - Tiện Lợi từ 21/7 đến hết 27/7 Chỉ 8phút nướng bánh sa...</p>
+
+            </div>
+            <div class="slide">
+                <img src="../img/homm/SLIDE4.jpg" alt="Slide 4">
+                <p> Một mùa trăng nữa lại về với ngào ngạt hương thơm từ muôn vàn chiếc bánh nướng, bánh dẻo. Những chiếc bánh tròn viên mãn, an lành tựa Mặt trăng, giăng đầy sự hoàn mỹ, tượn...</p>
+
+            </div>
+            <div class="slide">
+                <img src="../img/homm/SLIDE5.jpg" alt="Slide 5">
+                <p> Gateaux Mousse Đào Sữa Chua là sự kết hợp hoàn hảo giữa bánh bông lan mềm mịn và lớp mousse đào sữa chua thơm ngon, tạo nên một món tráng miệng tươi mát, phù hợp cho mùa h...</p>
+
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+
+        <button class="slider-btn right-btn" id="next-btn">&gt;</button>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <div class="about-section">
+        <div class="about-image-container">
+            <img src="../img/homm/image_move.png" alt="Anh Hoa Bakery Image" class="about-image">
+        </div>
+        <div class="about-content">
+            <h2>Về Chúng Tôi</h2>
+            <h3>Chào mừng bạn đến AnhHoa Bakery</h3>
+            <p>
+                Anh Hòa Bakery là thương hiệu bánh ngọt Pháp của công ty cổ phần bánh ngọt Anh Hòa. Được thành lập từ năm 2004 tại con phố Ngõ Trạm, quận Hoàn Kiếm, Hà Nội. Trải qua hơn 15 năm phát triển, đến nay Anh Hòa Bakery đã có 13 cơ sở kinh doanh đặt trên những
+                tuyến phố đông dân cư ở Hà Nội. Các sản phẩm Anh Hòa Bakery được làm từ các nguyên liệu nhập khẩu của các nước có truyền thống làm bánh như: Newzeland, Mỹ, Pháp, Bỉ. Với hương vị thơm ngon đặc trưng của các loại kem, bơ, sữa, phô mai,
+                hạt hạnh nhân, chocolate... dưới bàn tay khéo léo của những người thợ làm bánh giàu kinh nghiệm. Quy mô xưởng sản xuất rộng hơn 2000m2 với các thiết bị tiên tiến hiện đại theo tiêu chuẩn ISO 2018, toàn bộ nhà máy được sơn phủ bởi sơn EPOXY
+                đặc biệt. Anh Hòa Bakery luôn mang đến cho khách hàng những sản phẩm chất lượng nhất, đảm bảo tuyệt đối về an toàn vệ sinh thực phẩm. </p>
+            <button class="read-more-btn">Đọc thêm</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="company-info">
+                <img src="../img/homm/image.png" alt="Anh Hoa Bakery Logo" class="logo">
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> Số 09 Trần Thái Tông, P. Dịch Vọng, Q. Cầu Giấy, TP. Hà Nội <br>
+                    <i class="fas fa-phone-alt"></i> 0961452578 <br>
+                    <i class="fas fa-envelope"></i> anhhoabakery1@gmail.com
+                </p>
+            </div>
+
+            <div class="policies">
+                <h3>Chính Sách</h3>
+                <ul>
+                    <li><a href="#">Chính sách và quy định chung</a></li>
+                    <li><a href="#">Chính sách giao dịch, thanh toán</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                </ul>
+            </div>
+
+            <div class="company-details">
+                <h3>Công ty Cổ phần Bánh ngọt Anh Hòa</h3>
+                <p>
+                    Tên miền chính: anhhoabakery.vn <br> Tên miền phụ: banhngotphap.vn <br> MST/ĐKKD/QLTL: 0104802706 <br> Ngày cấp: 21/07/2010 <br> Nơi cấp: Sở Kế hoạch và Đầu tư Tp. Hà Nội
+                </p>
+            </div>
+
+            <div class="newsletter">
+                <h3>Mỗi tháng chúng tôi có những đợt giảm giá</h3>
+                <p>Để nhận thông tin mới nhất, vui lòng nhập email:</p>
+                <input type="email" placeholder="Nhập email của bạn...">
+                <button class="subscribe-btn"><i class="fas fa-envelope"></i></button>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>© 2024 Thanh Sang Bakery. All Rights Reserved.</p>
+    </div>
+</body>
+
+</html>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng ký</title>
     <link rel="stylesheet" href="../fontawesome-free-6.6.0-web/css/all.css">
+    <link rel="stylesheet" href="../css/aaa.css">
     <style>
         /* CSS cho trang đăng ký */
         
@@ -35,8 +36,9 @@
         
         .header-menu {
             width: 100%;
-            margin-top: 20px;
+            margin-top: 42px;
             text-align: center;
+            margin-left: 75px;
         }
         
         .header-menu ul {
@@ -288,9 +290,7 @@
     <header>
         <div class="header-top">
             <div class="logo">
-                <a href="../hrml/aaa.html">
-                    <img src="../img/homm/image.png" alt="Thanh Sang Bakery">
-                </a>
+                <a href="../hrml/aaa.html   "><img src="../img/homm/image.png" alt="Thanh Sang Bakery"></a>
             </div>
             <div class="search-bar">
                 <input type="text" class="search-input" placeholder="Tìm kiếm...">
@@ -307,21 +307,41 @@
                 <a href="../hrml/dangnhap.html" class="icon3">
                     <i class="fas fa-user"></i> Tài khoản
                 </a>
-                <a href="#" class="icon4">
+                <a href="javascript:void(0);" class="icon4" onclick="openCart()">
                     <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
                 </a>
+
             </div>
+
         </div>
         <div class="header-menu">
             <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Bánh Sinh Nhật</a></li>
-                <li><a href="#">Bánh Mì & Bánh Mặn</a></li>
-                <li><a href="#">Cookies & Minicake</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Khuyến mại</a></li>
+                <li><a href="../hrml/aaa.html">Trang Chủ</a></li>
+                <li><a href="#">Bánh Sinh Nhật</a>
+                    <div class="menu-dropdown">
+                        <a href="../hrml/GateauxKT.html">Gateaux Kem Tươi</a>
+                        <a href="../hrml/menu-banhvlt.html">Bánh Valentine - Trái Tim</a>
+                    </div>
+                </li>
+                <li><a href="#">Bánh Mì & Bánh Mặn</a>
+                    <div class="menu-dropdown">
+                        <a href="../hrml/menu-banhmi.html">Bánh mì</a>
+                        <a href="../hrml/menu-banhman.html">Bánh Mặn</a>
+                    </div>
+                </li>
+                <li><a href="#">Cookies & Minicake</a>
+                    <div class="menu-dropdown">
+                        <a href="../hrml/menu-cookies.html">Cookies</a>
+                        <a href="../hrml/menu-minicake.html">Minicake</a>
+                    </div>
+                </li>
+                <li><a href="../hrml/menu-tintuc.html">Tin tức</a></li>
+                <li><a href="../hrml/menu-khuyenmai.html">Khuyến mại</a></li>
             </ul>
         </div>
+
+
     </header>
 
     <!-- Hình nền toàn màn hình -->
@@ -329,15 +349,17 @@
 
     <!-- Form đăng ký hiển thị ở giữa màn hình -->
     <div class="register-container">
-        <form class="register-form">
+        <form class="register-form" onsubmit="handleRegister(event)">
             <h2>Đăng ký</h2>
-            <input type="text" placeholder="Tên người dùng" required>
-            <input type="email" placeholder="Địa chỉ email" required>
-            <input type="password" placeholder="Mật khẩu" required>
-            <input type="password" placeholder="Xác nhận mật khẩu" required>
+            <input type="text" id="username" placeholder="Tên người dùng" required>
+            <input type="email" id="email" placeholder="Địa chỉ email" required>
+            <input type="password" id="password" placeholder="Mật khẩu" required>
+            <input type="password" id="confirm-password" placeholder="Xác nhận mật khẩu" required>
             <button type="submit">Đăng ký</button>
             <a href="../hrml/dangnhap.html">Đã có tài khoản? Đăng nhập ngay!</a>
         </form>
+
+
     </div>
 
     <footer class="footer">
@@ -387,3 +409,35 @@
         <p>© 2024 Thanh Sang Bakery. All Rights Reserved.</p>
     </div>
 </body>
+<script>
+    function handleRegister(event) {
+        event.preventDefault(); // Ngăn chặn form tự động reload trang
+
+        // Lấy giá trị từ các ô nhập liệu
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const confirmPassword = document.getElementById("confirm-password").value.trim();
+
+        // Kiểm tra mật khẩu nhập lại
+        if (password !== confirmPassword) {
+            alert("Mật khẩu và xác nhận mật khẩu không khớp!");
+            return;
+        }
+
+        // Lưu thông tin người dùng vào localStorage
+        const user = {
+            username: username,
+            email: email,
+            password: password // Lưu mật khẩu ở dạng plain text (không khuyến khích)
+        };
+
+        localStorage.setItem("user", JSON.stringify(user));
+
+        // Hiển thị thông báo đăng ký thành công
+        alert("Đăng ký thành công!");
+
+        // Chuyển hướng đến trang chủ
+        window.location.href = "../hrml/aaa.html";
+    }
+</script>

@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập</title>
+    <title>Tin Tuc</title>
     <link rel="stylesheet" href="../fontawesome-free-6.6.0-web/css/all.css">
     <link rel="stylesheet" href="../css/aaa.css">
+    <script src="../bootstrap-4.0.0-dist/css/bootstrap.min.css"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
     <style>
-        /* CSS cho form đăng nhập */
+        /* CSS cho trang đăng ký */
         
         body,
+        body {
+            background-color: #f8f2e2;
+        }
+        
         html {
             margin: 0;
             padding: 0;
@@ -35,10 +41,10 @@
         }
         
         .header-menu {
-            margin-left: 65px;
             width: 100%;
-            margin-top: 44px;
+            margin-top: 42px;
             text-align: center;
+            margin-left: 75px;
         }
         
         .header-menu ul {
@@ -114,27 +120,6 @@
             margin-right: 8px;
             font-size: 16px;
         }
-        
-        .header-icons a.icon1 i {
-            color: #8bc34a;
-            /* Icon màu xanh lá cây cho số điện thoại */
-        }
-        
-        .header-icons a.icon2 i {
-            color: #ff9800;
-            /* Icon màu cam cho hệ thống cửa hàng */
-        }
-        
-        .header-icons a.icon3 i {
-            color: #2196f3;
-            /* Icon màu xanh dương cho tài khoản */
-        }
-        
-        .header-icons a.icon4 i {
-            color: #ffffff;
-            /* Icon màu trắng cho giỏ hàng */
-            font-size: 18px;
-        }
         /* Đặt hình ảnh nền bao phủ toàn bộ trang */
         
         .background-image {
@@ -149,29 +134,26 @@
             z-index: -1;
         }
         
-        .login-container {
-            /* position: absolute; */
-            /* top: 50%; */
-            /* left: 50%; */
-            /* transform: translate(-50%, -50%); */
+        .register-container {
             background-color: rgba(255, 255, 255, 0.8);
-            /* Nền mờ để form nổi bật hơn */
             padding: 30px;
             border-radius: 50px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 400px;
             max-width: 90%;
             text-align: center;
-            margin: 10px 10px 10px 32%;
-            /* margin-right: -18%; */
+            margin: 10px auto;
+            position: relative;
+            z-index: 1;
+            /* Để form đăng ký nằm trên nền */
         }
         
-        .login-form h2 {
+        .register-form h2 {
             margin-bottom: 20px;
             color: #5e2f28;
         }
         
-        .login-form input {
+        .register-form input {
             width: 100%;
             padding: 12px;
             margin: 10px 0;
@@ -180,7 +162,7 @@
             font-size: 16px;
         }
         
-        .login-form button {
+        .register-form button {
             width: 100%;
             padding: 12px;
             background-color: #5e2f28;
@@ -191,18 +173,18 @@
             border-radius: 4px;
         }
         
-        .login-form button:hover {
+        .register-form button:hover {
             background-color: #3c1d19;
         }
         
-        .login-form a {
+        .register-form a {
             display: block;
             margin-top: 15px;
             color: #5e2f28;
             text-decoration: none;
         }
         
-        .login-form a:hover {
+        .register-form a:hover {
             text-decoration: underline;
         }
         
@@ -307,6 +289,26 @@
             text-align: center;
             padding: 10px 0;
         }
+        
+        .pagination {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .pagination button {
+            background-color: #5e2f28;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            margin: 9px 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .pagination button:hover {
+            background-color: #3c1d19;
+        }
     </style>
 </head>
 
@@ -321,6 +323,7 @@
                 <button class="search-button">🔍</button>
             </div>
             <div class="header-icons">
+                <a href="../hrml/sitemap.html" style=" text-decoration:underline">SiteMap</a>
                 <a href="tel:0961 452 578" class="icon1">
                     <i class="fas fa-phone-alt"></i>
                     <span>0961 452 578</span>
@@ -368,20 +371,73 @@
 
     </header>
 
-    <!-- Hình nền toàn màn hình -->
-    <div class="background-image"></div>
 
-    <!-- Form đăng nhập hiển thị ở giữa màn hình -->
-    <div class="login-container">
-        <form class="login-form">
-            <h2>Đăng nhập</h2>
-            <input type="text" placeholder="Tên tài khoản" required>
-            <input type="password" placeholder="Mật khẩu" required>
-            <button type="submit">Đăng nhập</button>
-            <a href="#">Quên mật khẩu?</a>
-            <a href="../hrml/dangki.html">Tạo tài khoản mới</a>
-        </form>
+    <div class="slider-container">
+        <h3>Tin Tức</h3>
+        <h2>Nổi bật trong tuần</h2>
+
+        <div class="slider" id="slider">
+            <div class="slide">
+                <img src="../img/homm/SLIDE1.jpg" alt="Slide 1">
+                <p>Ngày Phụ Nữ Việt Nam 20/10 là ngày đặc biệt để tôn vinh những người phụ nữ Việt Nam...</p>
+            </div>
+            <div class="slide">
+                <img src="../img/homm/SLIDE2.jpg" alt="Slide 2">
+                <p>Ngày lễ Halloween xuất phát từ một nghi lễ cổ xưa ở phương Tây, nay đã trở thành một lễ hội...</p>
+            </div>
+            <div class="slide">
+                <img src="../img/homm/SLIDE3.jpg" alt="Slide 3">
+                <p>DEAL HOT CẢ TUẦN - MUA 2 TẶNG 1...</p>
+            </div>
+            <div class="slide">
+                <img src="../img/homm/SLIDE4.jpg" alt="Slide 4">
+                <p>Một mùa trăng nữa lại về với ngào ngạt hương thơm từ muôn vàn chiếc bánh nướng...</p>
+            </div>
+            <div class="slide">
+                <img src="../img/homm/SLIDE5.jpg" alt="Slide 5">
+                <p>Gateaux Mousse Đào Sữa Chua là sự kết hợp hoàn hảo giữa bánh bông lan mềm mịn...</p>
+            </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <button onclick="changePage(1)">1</button>
+            <button onclick="changePage(2)">2</button>
+            <button onclick="changePage(3)">3</button>
+        </div>
     </div>
+    <script>
+        let currentPage = 1;
+        const slidesPerPage = 2; // Số slide hiển thị mỗi trang
+        const slides = document.querySelectorAll('.slide');
+
+        function showPage(page) {
+            // Tính toán chỉ số bắt đầu và kết thúc cho trang hiện tại
+            const start = (page - 1) * slidesPerPage;
+            const end = start + slidesPerPage;
+
+            // Ẩn tất cả các slide
+            slides.forEach((slide, index) => {
+                slide.style.display = (index >= start && index < end) ? 'block' : 'none';
+            });
+        }
+
+        // Hàm thay đổi trang
+        function changePage(page) {
+            currentPage = page;
+            showPage(currentPage);
+        }
+
+        // Hiển thị trang đầu tiên khi tải trang
+        showPage(currentPage);
+    </script>
+
+
+
+
+
+
+
     <footer class="footer">
         <div class="footer-content">
             <div class="company-info">
@@ -425,10 +481,67 @@
             </div>
         </div>
     </footer>
+    <!-- Modal Giỏ hàng -->
+    <div class="cart-modal" id="cartModal" style="display: none;">
+        <div class="cart-content">
+            <h2>Giỏ hàng của bạn</h2>
+            <div class="cart-items"></div>
+            <div class="cart-total">
+                <strong>Tổng cộng:</strong> <span id="cartTotal">0đ</span>
+            </div>
+            <button onclick="checkoutCart()" style="width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; margin-top: 10px; cursor: pointer;">Thanh toán</button>
+            <button onclick="closeCart()" style="width: 100%; padding: 10px; background-color: #dc3545; color: white; border: none; margin-top: 10px; cursor: pointer;">Đóng</button>
+        </div>
+    </div>
+
+
+    <script src="../js/giohang.js"></script>
+    <script src="../js/cart.js"></script>
+
+    <script src="../js/ctsp.js"></script>
+    <script src="../js/addgiohang.js"></script>
+
+
     <div class="footer-bottom">
         <p>© 2024 Thanh Sang Bakery. All Rights Reserved.</p>
     </div>
-
+    <!-- Code injected by live-server -->
+    <script type="text/javascript">
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function() {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function(msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        } else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+        // ]]>
+    </script>
     <!-- Code injected by live-server -->
     <script type="text/javascript">
         // <![CDATA[  <-- For SVG support
@@ -467,5 +580,3 @@
         // ]]>
     </script>
 </body>
-
-</html>

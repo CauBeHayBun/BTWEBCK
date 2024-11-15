@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Layout</title>
+    <link rel="stylesheet" href="../fontawesome-free-6.6.0-web/css/all.css">
+    <link rel="stylesheet" href="../css/ctsp-moussecake.css">
+    <link rel="stylesheet" href="../css/giaodiengh.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="../img/homm/image.png" alt="Thanh Sang Bakery">
+            </div>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                <button class="search-button">🔍</button>
+            </div>
+            <div class="header-icons">
+                <a href="tel:0961 452 578" class="icon1">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>0961 452 578</span>
+                </a>
+                <a href="#" class="icon2">
+                    <i class="fas fa-store"></i> Hệ thống 15 cửa hàng
+                </a>
+                <a href="../hrml/dangnhap.html" class="icon3">
+                    <i class="fas fa-user"></i> Tài khoản
+                </a>
+                <a href="#" class="icon4">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+
+        </div>
+        <div class="header-menu">
+            <ul>
+                <li><a href="../hrml/aaa.html">Trang Chủ</a></li>
+                <li><a href="#">Bánh Sinh Nhật</a>
+                    <div class="menu-dropdown">
+                        <a href="#">Gateaux Kem Tươi</a>
+                        <a href="#">Bánh Valentine - Trái Tim</a>
+                    </div>
+                </li>
+                <li><a href="#">Bánh Mì & Bánh Mặn</a>
+                    <div class="menu-dropdown">
+                        <a href="#">Bánh mì</a>
+                        <a href="#">Bánh Mặn</a>
+                    </div>
+                </li>
+                <li><a href="#">Cookies & Minicake</a>
+                    <div class="menu-dropdown">
+                        <a href="#">Cookies</a>
+                        <a href="#">Minicake</a>
+                    </div>
+                </li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Khuyến mại</a></li>
+            </ul>
+        </div>
+
+
+    </header>
+
+    <!-- Banner Section -->
+    <div class="banner">
+        <div class="slideshow-container">
+
+            <!-- Slide 1 -->
+            <div class="mySlides fade">
+                <img src="../img/homm/mb_banner_img1.jpg" alt="Banner Image 1">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="mySlides fade">
+                <img src="../img/homm/mb_banner_img2.png" alt="Banner Image 2">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="mySlides fade">
+                <img src="../img/homm/mb_banner_img3.png" alt="Banner Image 3">
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script-banner.js"></script>
+
+    <!-- Sản phẩm -->
+    <div className="max-w-4xl mx-auto p-6">
+        <h1 className="text-2xl font-bold mb-8">GIỎ HÀNG</h1>
+
+        <div className="grid grid-cols-[2fr,1fr,1fr,1fr] gap-4 text-sm text-gray-600 mb-4">
+            <div>Thông tin chi tiết sản phẩm</div>
+            <div className="text-center">Đơn giá</div>
+            <div className="text-center">Số lượng</div>
+            <div className="text-center">Tổng giá</div>
+        </div>
+
+        <div className="grid grid-cols-[2fr,1fr,1fr,1fr] gap-4 items-center border-t py-4">
+            <div className="flex gap-4">
+                <img src="../img/Gateaux Kem Tươi/image.png" alt="BÁNH KEM 20-10" className="w-24 h-24 object-cover rounded" />
+                <div>
+                    <h3 className="font-medium text-lg">BÁNH KEM 20-10</h3>
+                    <p className="text-sm text-gray-600">22x32cm</p>
+                    <p className="text-sm text-gray-600">Xóa</p>
+                </div>
+            </div>
+
+            <div className="text-center">
+                {basePrice.toLocaleString()}₫
+            </div>
+
+            <div className="flex items-center justify-center gap-2">
+                <button onClick={decreaseQuantity} className="p-1 border rounded hover:bg-gray-100">
+              <MinusIcon className="w-4 h-4" />
+            </button>
+                <span className="w-8 text-center">{quantity}</span>
+                <button onClick={increaseQuantity} className="p-1 border rounded hover:bg-gray-100">
+              <PlusIcon className="w-4 h-4" />
+            </button>
+            </div>
+
+            <div className="text-center font-medium">
+                {(basePrice * quantity).toLocaleString()}₫
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="company-info">
+                <img src="../img/homm/image.png" alt="Anh Hoa Bakery Logo" class="logo">
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> Số 09 Trần Thái Tông, P. Dịch Vọng, Q. Cầu Giấy, TP. Hà Nội <br>
+                    <i class="fas fa-phone-alt"></i> 0961452578 <br>
+                    <i class="fas fa-envelope"></i> anhhoabakery1@gmail.com
+                </p>
+            </div>
+
+            <div class="policies">
+                <h3>Chính Sách</h3>
+                <ul>
+                    <li><a href="#">Chính sách và quy định chung</a></li>
+                    <li><a href="#">Chính sách giao dịch, thanh toán</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                </ul>
+            </div>
+
+            <div class="company-details">
+                <h3>Công ty Cổ phần Bánh ngọt Anh Hòa</h3>
+                <p>
+                    Tên miền chính: anhhoabakery.vn <br> Tên miền phụ: banhngotphap.vn <br> MST/ĐKKD/QLTL: 0104802706 <br> Ngày cấp: 21/07/2010 <br> Nơi cấp: Sở Kế hoạch và Đầu tư Tp. Hà Nội
+                </p>
+            </div>
+
+            <div class="newsletter">
+                <h3>Mỗi tháng chúng tôi có những đợt giảm giá</h3>
+                <p>Để nhận thông tin mới nhất, vui lòng nhập email:</p>
+                <input type="email" placeholder="Nhập email của bạn...">
+                <button class="subscribe-btn"><i class="fas fa-envelope"></i></button>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>© 2024 Thanh Sang Bakery. All Rights Reserved.</p>
+    </div>
+</body>
+
+</html>

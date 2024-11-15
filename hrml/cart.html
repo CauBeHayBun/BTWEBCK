@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng của bạn</title>
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+
+<body>
+    <h1>Giỏ hàng của bạn</h1>
+    <div id="cartItems"></div>
+    <div id="cartTotal"></div>
+
+    <script>
+        // Lấy giỏ hàng từ localStorage và hiển thị
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartItemsContainer = document.getElementById("cartItems");
+        let total = 0;
+
+        cart.forEach(item => {
+            const itemEl = document.createElement("div");
+            itemEl.innerHTML = `
+                <p>Sản phẩm: ${item.product} - Giá: ${item.price}đ - Số lượng: ${item.quantity}</p>
+            `;
+            cartItemsContainer.appendChild(itemEl);
+            total += item.price * item.quantity;
+        });
+
+        document.getElementById("cartTotal").textContent = `Tổng cộng: ${total}đ`;
+    </script>
+</body>
+
+</html>

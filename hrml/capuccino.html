@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Layout</title>
+    <link rel="stylesheet" href="../fontawesome-free-6.6.0-web/css/all.css">
+    <link rel="stylesheet" href="../css/ctsp-moussecake.css">
+    <style>
+        /* General Reset */
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <a href="../hrml/aaa.html   "><img src="../img/homm/image.png" alt="Thanh Sang Bakery"></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                <button class="search-button">🔍</button>
+            </div>
+            <div class="header-icons">
+                <a href="tel:0961 452 578" class="icon1">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>0961 452 578</span>
+                </a>
+                <a href="#" class="icon2">
+                    <i class="fas fa-store"></i> Hệ thống 15 cửa hàng
+                </a>
+                <a href="../hrml/dangnhap.html" class="icon3">
+                    <i class="fas fa-user"></i> Tài khoản
+                </a>
+                <a href="javascript:void(0);" class="icon4" onclick="openCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+
+            </div>
+
+        </div>
+        <div class="header-menu">
+            <ul>
+                <li><a href="../hrml/aaa.html">Trang Chủ</a></li>
+                <li><a href="#">Bánh Sinh Nhật</a>
+                    <div class="menu-dropdown">
+                        <a href="../hrml/GateauxKT.html">Gateaux Kem Tươi</a>
+                        <a href="../hrml/menu-banhvlt.html">Bánh Valentine - Trái Tim</a>
+                    </div>
+                </li>
+                <li><a href="#">Bánh Mì & Bánh Mặn</a>
+                    <div class="menu-dropdown">
+                        <a href="../hrml/menu-banhmi.html">Bánh mì</a>
+                        <a href="../hrml/menu-banhman.html">Bánh Mặn</a>
+                    </div>
+                </li>
+                <li><a href="#">Cookies & Minicake</a>
+                    <div class="menu-dropdown">
+                        <a href="../hrml/menu-cookies.html">Cookies</a>
+                        <a href="../hrml/menu-minicake.html">Minicake</a>
+                    </div>
+                </li>
+                <li><a href="../hrml/menu-tintuc.html">Tin tức</a></li>
+                <li><a href="../hrml/menu-khuyenmai.html">Khuyến mại</a></li>
+            </ul>
+        </div>
+
+
+    </header>
+
+    <!-- Banner Section -->
+    <div class="banner">
+        <div class="slideshow-container">
+
+            <!-- Slide 1 -->
+            <div class="mySlides fade">
+                <img src="../img/homm/mb_banner_img1.jpg" alt="Banner Image 1">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="mySlides fade">
+                <img src="../img/homm/mb_banner_img2.png" alt="Banner Image 2">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="mySlides fade">
+                <img src="../img/homm/mb_banner_img3.png" alt="Banner Image 3">
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="../js/script-banner.js"></script>
+    <!-- Kết nối với file JS -->
+
+    <div class="product-details">
+        <div class="product-image">
+            <img src="../img/Gateaux Kem Tươi/image2.png" alt="Fruit Cake" id="productImage">
+        </div>
+        <div class="product-info">
+            <h1>CAPUCCINO </h1>
+            <p>Mã sản phẩm: <span id="productCode">GNT03</span></p>
+            <p>Giá: <span id="productPrice">330,000đ</span></p>
+            <div class="size-options">
+                <label>Kích thước:</label>
+                <button onclick="selectSize('19 cm')">19 cm</button>
+                <button onclick="selectSize('21 cm')">21 cm</button>
+                <button onclick="selectSize('23 cm')">23 cm</button>
+                <button onclick="selectSize('25 cm')">25 cm</button>
+            </div>
+            <div class="quantity">
+                <label>Số lượng:</label>
+                <button onclick="decreaseQuantity()">-</button>
+                <input type="text" value="1" id="quantityInput">
+                <button onclick="increaseQuantity()">+</button>
+            </div>
+            <button class="add-to-cart" onclick="handleAddToCart()">THÊM VÀO GIỎ HÀNG</button>
+        </div>
+    </div>
+
+    <!-- Modal Giỏ hàng -->
+    <!-- Modal Giỏ hàng -->
+    <div class="cart-modal" id="cartModal" style="display: none;">
+        <div class="cart-content">
+            <h2>Giỏ hàng của bạn</h2>
+            <div class="cart-items"></div>
+            <div class="cart-total">
+                <strong>Tổng cộng:</strong> <span id="cartTotal">0đ</span>
+            </div>
+            <button onclick="checkoutCart()" style="width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; margin-top: 10px; cursor: pointer;">Thanh toán</button>
+            <button onclick="closeCart()" style="width: 100%; padding: 10px; background-color: #dc3545; color: white; border: none; margin-top: 10px; cursor: pointer;">Đóng</button>
+        </div>
+    </div>
+
+
+    <script src="../js/giohang.js"></script>
+
+
+    <script src="../js/cart.js"></script>
+
+    <script src="../js/ctsp.js"></script>
+    <script src="../js/addgiohang.js"></script>
+
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('description')">MÔ TẢ CHUNG</button>
+            <button class="tab" onclick="switchTab('comments')">BÌNH LUẬN</button>
+        </div>
+
+        <div id="description" class="tab-content content active">
+            <div class="section1">
+                <h3>(*) Kích thước bánh:</h3>
+                <ul>
+                    <li>- Cao: 10cm</li>
+                    <li>- Rộng: 19cm - 30cm - 40cm.</li>
+                </ul>
+            </div>
+
+            <div class="section1">
+                <h3>(*) Các loại bánh:</h3>
+                <ul>
+                    <li><strong>(*) Loại 1:</strong> 3 tầng bánh thật.<span class="price">==> 3.900.000đ</span></li>
+                    <li><strong>(*) Loại 2:</strong> 1 tầng bánh thật (nhỏ nhất) + 2 tầng bánh giả (lõi xốp)<span class="price">==> 2.400.000đ</span></li>
+                    <li><strong>(*) Loại 3:</strong> 2 tầng bánh thật + 1 tầng bánh giả (tầng cuối, lõi xốp)<span class="price">==> 3.000.000đ</span></li>
+                </ul>
+            </div>
+
+            <div class="section1">
+                <h3>(*) Thành phần chính:</h3>
+                <ul>
+                    <li>- Gato</li>
+                    <li>- Kem tươi</li>
+                    <li>- Hoa tươi trang trí (hoa kem = màu sắc thực phẩm an được)</li>
+                </ul>
+            </div>
+
+            <div class="note">
+                <strong>* Chú ý:</strong> phần kem tươi màu sắc để trang trí Quý khách nên gạt bỏ phần đó ra ngoài trước khi ăn để đảm bảo thẩm mỹ và hương vị tự nhiên chuẩn của bánh.
+            </div>
+        </div>
+
+        <div id="comments" class="tab-content content">
+            <p style="color: #666; font-style: italic;">Chưa có bình luận nào.</p>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="company-info">
+                <img src="../img/homm/image.png" alt="Anh Hoa Bakery Logo" class="logo">
+                <p>
+                    <i class="fas fa-map-marker-alt"></i> Số 09 Trần Thái Tông, P. Dịch Vọng, Q. Cầu Giấy, TP. Hà Nội <br>
+                    <i class="fas fa-phone-alt"></i> 0961452578 <br>
+                    <i class="fas fa-envelope"></i> anhhoabakery1@gmail.com
+                </p>
+            </div>
+
+            <div class="policies">
+                <h3>Chính Sách</h3>
+                <ul>
+                    <li><a href="#">Chính sách và quy định chung</a></li>
+                    <li><a href="#">Chính sách giao dịch, thanh toán</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                </ul>
+            </div>
+
+            <div class="company-details">
+                <h3>Công ty Cổ phần Bánh ngọt Anh Hòa</h3>
+                <p>
+                    Tên miền chính: anhhoabakery.vn <br> Tên miền phụ: banhngotphap.vn <br> MST/ĐKKD/QLTL: 0104802706 <br> Ngày cấp: 21/07/2010 <br> Nơi cấp: Sở Kế hoạch và Đầu tư Tp. Hà Nội
+                </p>
+            </div>
+
+            <div class="newsletter">
+                <h3>Mỗi tháng chúng tôi có những đợt giảm giá</h3>
+                <p>Để nhận thông tin mới nhất, vui lòng nhập email:</p>
+                <input type="email" placeholder="Nhập email của bạn...">
+                <button class="subscribe-btn"><i class="fas fa-envelope"></i></button>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>© 2024 Thanh Sang Bakery. All Rights Reserved.</p>
+    </div>
+
+
+</body>
+
+</html>

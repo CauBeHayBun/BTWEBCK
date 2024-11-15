@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../css/aaa.css">
     <script src="../bootstrap-4.0.0-dist/css/bootstrap.min.css"></script>
     <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        /* General Reset */
+    </style>
 </head>
 
 <body>
@@ -19,12 +22,9 @@
                 <a href="../hrml/aaa.html"><img src="../img/homm/image.png" alt="Thanh Sang Bakery"></a>
             </div>
             <div class="search-bar">
-                <input type="text" class="search-input" placeholder="Tìm kiếm..." onkeyup="searchProducts()">
-                <button type="submit" class="search-button" onclick="searchProducts()">🔍</button>
+                <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                <button class="search-button">🔍</button>
             </div>
-            <div class="search-results"></div>
-
-
             <div class="header-icons">
                 <a href="../hrml/sitemap.html" style=" text-decoration:underline">SiteMap</a>
                 <a href="tel:0961 452 578" class="icon1">
@@ -34,32 +34,16 @@
                 <a href="#" class="icon2">
                     <i class="fas fa-store"></i> Hệ thống 15 cửa hàng
                 </a>
-                <a href="../hrml/dangnhap.html" id="userAccount" class="icon3">
-                    <i class="fas fa-user"></i> Đăng nhập
+                <a href="../hrml/dangnhap.html" class="icon3">
+                    <i class="fas fa-user"></i> Tài khoản
                 </a>
-
-                <script>
-                    // Kiểm tra nếu người dùng đã đăng ký
-                    const user = JSON.parse(localStorage.getItem("user"));
-                    const userAccountLink = document.getElementById("userAccount");
-
-                    if (user && user.username) {
-                        // Nếu có thông tin người dùng, đổi chữ "Đăng nhập" thành tên tài khoản
-                        userAccountLink.textContent = user.username;
-                        userAccountLink.href = "javascript:void(0);"; // Không chuyển hướng nếu đã đăng nhập
-                    }
-                </script>
                 <a href="javascript:void(0);" class="icon4" onclick="openCart()">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
                 </a>
-
-
             </div>
+
         </div>
-
-        <script src="../js/timkiemsp.js"></script>
-
         <div class="header-menu">
             <ul>
                 <li><a href="../hrml/aaa.html">Trang Chủ</a></li>
@@ -83,23 +67,32 @@
                 </li>
                 <li><a href="../hrml/menu-tintuc.html">Tin tức</a></li>
                 <li><a href="../hrml/menu-khuyenmai.html">Khuyến mại</a></li>
-
             </ul>
         </div>
+
+
     </header>
 
     <!-- Banner Section -->
     <div class="banner">
         <div class="slideshow-container">
+
+            <!-- Slide 1 -->
             <div class="mySlides fade">
                 <img src="../img/homm/mb_banner_img1.jpg" alt="Banner Image 1">
             </div>
+
+            <!-- Slide 2 -->
             <div class="mySlides fade">
                 <img src="../img/homm/mb_banner_img2.png" alt="Banner Image 2">
             </div>
+
+            <!-- Slide 3 -->
             <div class="mySlides fade">
                 <img src="../img/homm/mb_banner_img3.png" alt="Banner Image 3">
             </div>
+
+            <!-- Navigation Buttons -->
             <div style="text-align:center">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
@@ -129,72 +122,72 @@
     <script src="../js/addgiohang.js"></script>
 
 
+
+    <script src="../js/script-banner.js"></script>
+    <!-- Kết nối với file JS -->
+
     <!-- Cake Section -->
     <section class="cake-section">
-        <h2>Trang Chủ</h2>
+        <h2>COOKIES</h2>
         <div class="cake-items">
             <div class="cake-item">
-                <a href="../hrml/chitietsanpham-Cakemousse.html">
-                    <img src="../img/homm/anh4.png" alt="Tiramisu Cake Mousse">
-                    <h3>TIRAMISU CAKE MOUSSE</h3>
-                    <p>360,000 đ</p>
+                <a href="../hrml/ck-yenmach.html">
+                    <img src="../img/cookies/image.png" alt="Tiramisu Cake Mousse">
+                    <h3>
+                        Cookies Yến Mạch
+                    </h3>
+                    <p>60,000đ</p>
                     <button type="button" class="button-gh">
-                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa fa fa-shopping-cart"></i>
                     </button>
                 </a>
             </div>
             <div class="cake-item">
-                <a href="../hrml/redcake.html">
-                    <img src="../img/homm/anh7.png" alt="Tiramisu Cake Chữ Nhật">
-                    <h3>RED VELVET CAKE </h3>
-                    <p>360,000 đ</p>
+                <a href="../hrml/ck-scl6.html">
+                    <img src="../img/cookies/image1.png" alt="Tiramisu Cake Chữ Nhật">
+                    <h3>
+                        SOCOLA 6
+                    </h3>
+                    <p>7,000đ</p>
                     <button type="button" class="button-gh">
-                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa fa fa-shopping-cart"></i>
+                    </button>
+
+                </a>
+            </div>
+            <div class="cake-item">
+                <a href="../hrml/ck-scl5.html">
+                    <img src="../img/cookies/2.png" alt="Tiramisu Cake">
+                    <h3>
+
+                        SOCOLA 5
+
+                    </h3>
+                    <p>6,000đ</p>
+                    <button type="button" class="button-gh">
+                        <i class="fa fa fa-shopping-cart"></i>
                     </button>
                 </a>
             </div>
             <div class="cake-item">
-                <a href="../hrml/tiramisucake1.html">
-                    <img src="../img/homm/anh6.png" alt="Tiramisu Cake Chữ Nhật">
-                    <h3>TIRAMISU CAKE</h3>
-                    <p>330,000 đ</p>
+                <a href="../hrml/ck-scl4.html">
+                    <img src="../img/cookies/image3.png" alt="Red Velvet Cream Cheese">
+                    <h3>
+
+                        SOCOLA 4
+
+                    </h3>
+                    <p>6,000đ</p>
                     <button type="button" class="button-gh">
-                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa fa fa-shopping-cart"></i>
                     </button>
                 </a>
             </div>
-            <div class="cake-item">
-                <a href="../hrml/tiramisucake.html">
-                    <img src="../img/homm/anh5.png" alt="Tiramisu Cake Chữ Nhật">
-                    <h3>TIRAMISU CAKE CHỮ NHẬT</h3>
-                    <p>660,000 đ</p>
-                    <button type="button" class="button-gh">
-                        <i class="fa fa-shopping-cart"></i>
-                    </button>
-                </a>
-            </div>
-            <!-- Thêm các sản phẩm bánh khác tương tự -->
+
         </div>
     </section>
 
 
-
-    <!-- Order Form -->
-    <section class="order-form">
-        <div class="section-img">
-            <img src="../img/homm/image1.png" alt="">
-        </div>
-        <div class="section-body">
-            <h2>Đặt Online Ngay!</h2>
-            <form>
-                <input type="text" placeholder="Họ tên của bạn">
-                <input type="email" placeholder="Địa chỉ email của bạn">
-                <input type="text" placeholder="Số điện thoại của bạn">
-                <textarea placeholder="Nội dung"></textarea>
-                <button type="submit">Đặt Ngay</button>
-            </form>
-        </div>
-    </section>
     <div class="slider-container">
         <h3>Tin Tức</h3>
         <h2>Nổi bật trong tuần</h2>
@@ -236,25 +229,6 @@
 
     <script src="../js/script.js"></script>
 
-
-    <div class="about-section">
-        <div class="about-image-container">
-            <img src="../img/homm/image_move.png" alt="Anh Hoa Bakery Image" class="about-image">
-        </div>
-        <div class="about-content">
-            <h2>Về Chúng Tôi</h2>
-            <h3>Chào mừng bạn đến AnhHoa Bakery</h3>
-            <p>
-                Anh Hòa Bakery là thương hiệu bánh ngọt Pháp của công ty cổ phần bánh ngọt Anh Hòa. Được thành lập từ năm 2004 tại con phố Ngõ Trạm, quận Hoàn Kiếm, Hà Nội. Trải qua hơn 15 năm phát triển, đến nay Anh Hòa Bakery đã có 13 cơ sở kinh doanh đặt trên những
-                tuyến phố đông dân cư ở Hà Nội. Các sản phẩm Anh Hòa Bakery được làm từ các nguyên liệu nhập khẩu của các nước có truyền thống làm bánh như: Newzeland, Mỹ, Pháp, Bỉ. Với hương vị thơm ngon đặc trưng của các loại kem, bơ, sữa, phô mai,
-                hạt hạnh nhân, chocolate... dưới bàn tay khéo léo của những người thợ làm bánh giàu kinh nghiệm. Quy mô xưởng sản xuất rộng hơn 2000m2 với các thiết bị tiên tiến hiện đại theo tiêu chuẩn ISO 2018, toàn bộ nhà máy được sơn phủ bởi sơn EPOXY
-                đặc biệt. Anh Hòa Bakery luôn mang đến cho khách hàng những sản phẩm chất lượng nhất, đảm bảo tuyệt đối về an toàn vệ sinh thực phẩm. </p>
-            <button class="read-more-btn">Đọc thêm</button>
-        </div>
-    </div>
-
-
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="company-info">
@@ -265,6 +239,7 @@
                     <i class="fas fa-envelope"></i> anhhoabakery1@gmail.com
                 </p>
             </div>
+
             <div class="policies">
                 <h3>Chính Sách</h3>
                 <ul>
@@ -275,12 +250,14 @@
                     <li><a href="#">Chính sách vận chuyển</a></li>
                 </ul>
             </div>
+
             <div class="company-details">
                 <h3>Công ty Cổ phần Bánh ngọt Anh Hòa</h3>
                 <p>
                     Tên miền chính: anhhoabakery.vn <br> Tên miền phụ: banhngotphap.vn <br> MST/ĐKKD/QLTL: 0104802706 <br> Ngày cấp: 21/07/2010 <br> Nơi cấp: Sở Kế hoạch và Đầu tư Tp. Hà Nội
                 </p>
             </div>
+
             <div class="newsletter">
                 <h3>Mỗi tháng chúng tôi có những đợt giảm giá</h3>
                 <p>Để nhận thông tin mới nhất, vui lòng nhập email:</p>
@@ -294,17 +271,10 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2024 Thanh Sang Bakery. All Rights Reserved.</p>
-        </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="../js/script-banner.js"></script>
-    <script src="../js/script.js"></script>
-
-
+    <div class="footer-bottom">
+        <p>© 2024 Thanh Sang Bakery. All Rights Reserved.</p>
+    </div>
 </body>
-
 
 </html>

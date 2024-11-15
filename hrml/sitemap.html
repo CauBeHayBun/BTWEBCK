@@ -7,8 +7,6 @@
     <title>Bakery Layout</title>
     <link rel="stylesheet" href="../fontawesome-free-6.6.0-web/css/all.css">
     <link rel="stylesheet" href="../css/aaa.css">
-    <script src="../bootstrap-4.0.0-dist/css/bootstrap.min.css"></script>
-    <script src="../js/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -34,30 +32,16 @@
                 <a href="#" class="icon2">
                     <i class="fas fa-store"></i> Hệ thống 15 cửa hàng
                 </a>
-                <a href="../hrml/dangnhap.html" id="userAccount" class="icon3">
-                    <i class="fas fa-user"></i> Đăng nhập
+                <a href="../hrml/dangnhap.html" class="icon3">
+                    <i class="fas fa-user"></i> Tài khoản
                 </a>
-
-                <script>
-                    // Kiểm tra nếu người dùng đã đăng ký
-                    const user = JSON.parse(localStorage.getItem("user"));
-                    const userAccountLink = document.getElementById("userAccount");
-
-                    if (user && user.username) {
-                        // Nếu có thông tin người dùng, đổi chữ "Đăng nhập" thành tên tài khoản
-                        userAccountLink.textContent = user.username;
-                        userAccountLink.href = "javascript:void(0);"; // Không chuyển hướng nếu đã đăng nhập
-                    }
-                </script>
                 <a href="javascript:void(0);" class="icon4" onclick="openCart()">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
                 </a>
 
-
             </div>
         </div>
-
         <script src="../js/timkiemsp.js"></script>
 
         <div class="header-menu">
@@ -131,50 +115,7 @@
 
     <!-- Cake Section -->
     <section class="cake-section">
-        <h2>Trang Chủ</h2>
-        <div class="cake-items">
-            <div class="cake-item">
-                <a href="../hrml/chitietsanpham-Cakemousse.html">
-                    <img src="../img/homm/anh4.png" alt="Tiramisu Cake Mousse">
-                    <h3>TIRAMISU CAKE MOUSSE</h3>
-                    <p>360,000 đ</p>
-                    <button type="button" class="button-gh">
-                        <i class="fa fa-shopping-cart"></i>
-                    </button>
-                </a>
-            </div>
-            <div class="cake-item">
-                <a href="../hrml/redcake.html">
-                    <img src="../img/homm/anh7.png" alt="Tiramisu Cake Chữ Nhật">
-                    <h3>RED VELVET CAKE </h3>
-                    <p>360,000 đ</p>
-                    <button type="button" class="button-gh">
-                        <i class="fa fa-shopping-cart"></i>
-                    </button>
-                </a>
-            </div>
-            <div class="cake-item">
-                <a href="../hrml/tiramisucake1.html">
-                    <img src="../img/homm/anh6.png" alt="Tiramisu Cake Chữ Nhật">
-                    <h3>TIRAMISU CAKE</h3>
-                    <p>330,000 đ</p>
-                    <button type="button" class="button-gh">
-                        <i class="fa fa-shopping-cart"></i>
-                    </button>
-                </a>
-            </div>
-            <div class="cake-item">
-                <a href="../hrml/tiramisucake.html">
-                    <img src="../img/homm/anh5.png" alt="Tiramisu Cake Chữ Nhật">
-                    <h3>TIRAMISU CAKE CHỮ NHẬT</h3>
-                    <p>660,000 đ</p>
-                    <button type="button" class="button-gh">
-                        <i class="fa fa-shopping-cart"></i>
-                    </button>
-                </a>
-            </div>
-            <!-- Thêm các sản phẩm bánh khác tương tự -->
-        </div>
+        <img src="../img/sitemap/image.png" alt="" class="site-map-dx">
     </section>
 
 
